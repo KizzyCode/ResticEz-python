@@ -86,9 +86,9 @@ class Config:
     def __init__(self, env_json="RESTIC_EZ_CONFIG", env_file="RESTIC_EZ_CONFIG_FILE", var="CONFIG"):
         """Load the config from an environment variable or global variable"""
         if env_json in os.environ:
-            self._config = json.loads(os.environ[env])
+            self._config = json.loads(os.environ[env_json])
         elif env_file in os.environ:
-            config_json = open(env_file, mode="r").read()
+            config_json = open(os.environ[env_file], mode="r").read()
             self._config = json.loads(config_json)
         elif var in globals():
             self._config = json.loads(globals()[var])
