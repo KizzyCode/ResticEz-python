@@ -114,7 +114,7 @@ class Config:
         else:
             return []
 
-    def env(self) -> dict[str, str]:
+    def env(self) -> dict:
         """Generates a shell environment dictionary from the config"""
         return {
             "RESTIC_EZ_CONFIG": json.dumps(self._config),
@@ -146,7 +146,7 @@ class Restic:
         """Creates a new restic instance"""
         self._config = config
     
-    def list(self) -> list[str]:
+    def list(self) -> list:
         """Lists all existing archives in a human readable format"""
         archives = []
         for archive in self._list():
