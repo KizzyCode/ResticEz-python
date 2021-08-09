@@ -6,6 +6,10 @@ import subprocess
 import sys
 
 
+# Define config here if appropriate
+# CONFIG = ...
+
+
 class Command:
     """A command executor"""
     
@@ -305,4 +309,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] in commands:
         commands[sys.argv[1]](sys.argv[2:])
     else:
-        help(exitcode=1) 
+        help(exitcode=1)
